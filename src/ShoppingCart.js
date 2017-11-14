@@ -3,12 +3,12 @@ import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 import CartFooter from './CartFooter';
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
     return (
         <div>
             <CartHeader />
-            <CartItems />
-            <CartFooter year="1999"/>
+            <CartItems items={props.items} />
+            <CartFooter year={props.year}/>
         </div>
     )
 }
