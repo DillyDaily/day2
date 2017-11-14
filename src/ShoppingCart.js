@@ -8,7 +8,7 @@ const ShoppingCart = () => {
         <div>
             <CartHeader />
             <CartItems />
-            <CartFooter />
+            <CartFooter year="1999"/>
         </div>
     )
 }
