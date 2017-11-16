@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import ShoppingCart from './ShoppingCart';
-import AddItem from './AddItem';
-
 
 class App extends Component {
 
@@ -35,19 +33,24 @@ class App extends Component {
   }
 
   updateItemsList = (item) => {
-    this.setState({items: this.state.items.concat(item)})
+    let selectedProduct = this.state.products.filter(product => product.id == item.product)[0];
+    let newItem = {
+      quantity: item.quantity,
+      product: selectedProduct
+    }
+
+    this.setState({items: this.state.items.concat(newItem)})
   }
 
   render() {
     console.log('this in App', this)
     return (
       <div className="App">
-        <AddItem updateItemsListFunc={this.updateItemsList} />
         <ShoppingCart 
-        year={this.state.year} 
-        items={this.state.items} 
-        products={this.state.products}
-        quantities={this.state.items.quantity}/>
+          year={this.state.year} 
+          items={this.state.items} 
+          products={this.state.products}
+          updateItemsList={this.updateItemsList}/>
       </div>
       
     );

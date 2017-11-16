@@ -10,7 +10,6 @@ class AddItem extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.itemAdded(this.state.product)
-    this.props.quantityAdded(this.state.quantity)
   }
 
   handleProductsList = (e) => {
