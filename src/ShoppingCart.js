@@ -20,9 +20,7 @@ class ShoppingCart extends React.Component {
                     itemAdded={ this.handleItemAdded }  
                     quantity={ this.props.items.quantity }
                     quantityAdded={ this.handleQuantityAdded }
-
             />
-
             <CartFooter year={ this.props.year }/>
         </div>
     )

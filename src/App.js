@@ -32,7 +32,7 @@ class App extends Component {
     year: 1999
   }
 
-  updateItemsList = (item) => {
+  handleItemAdded = (item) => {
     let selectedProduct = this.state.products.filter(product => product.id == item.product)[0];
     let newItem = {
       quantity: item.quantity,
@@ -50,7 +50,7 @@ class App extends Component {
           year={this.state.year} 
           items={this.state.items} 
           products={this.state.products}
-          updateItemsList={this.updateItemsList}/>
+          handleItemAdded={this.handleItemAdded}/>
       </div>
       
     );

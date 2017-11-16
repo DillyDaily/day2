@@ -9,7 +9,7 @@ class AddItem extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.itemAdded(this.state.product)
+    this.props.itemAdded(this.state)
   }
 
   handleProductsList = (e) => {
@@ -33,20 +33,9 @@ class AddItem extends Component {
       )
     })
 
-    // let quantityList = this.props.quantity.map(quantity => {
-    //     return (
-    //         <option 
-    //             key={quantity.id}
-    //             value={quantity.id}
-    //             >
-    //             { quantity.quantity }
-    //             </option>
-    //     )
-    // })
-
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="row">
             <div className="col s5">
             <select
@@ -65,7 +54,7 @@ class AddItem extends Component {
 
                 </div>
                 <div className="col s2">
-              <input type="submit" value="Add Item"/>
+              <input type="submit" value="Add"/>
             </div>
           </div>
         </form>
